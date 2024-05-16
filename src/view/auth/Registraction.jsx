@@ -13,7 +13,7 @@ export default function Registration() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/login', value).then(({ data }) => {
+        axios.post('/api/auth/registration', value).then(({ data }) => {
             if (data.success) {
                 toast.success(data.message)
                 setCookie('auth_token', data.token)
@@ -42,7 +42,7 @@ export default function Registration() {
                                 </InputGroup.Text>
                                 <Form.Control placeholder="username" aria-label="username" type='text' aria-describedby="basic-addon1" required value={value.userName} onChange={(event) => setValue({ ...value, userName: event.target.value })} />
                             </InputGroup>
-                            
+
                             <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1">
                                     <i className="fas fa-envelope"></i>

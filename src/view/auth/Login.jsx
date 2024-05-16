@@ -13,7 +13,7 @@ export default function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/login', value).then(({data }) => {
+        axios.post('/api/auth/login', value).then(({ data }) => {
             if (data.success) {
                 toast.success(data.message)
                 setCookie('auth_token', data.token)

@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import { getCookie } from '../helper/cookiesHelper';
 
-const axios = Axios.create({ baseURL: 'https://tracsess-e6fd5e49db79.herokuapp.com' })
+const axios = Axios.create({ baseURL: 'http://127.0.0.1:3100' })
 
 axios.interceptors.request.use(config => {
     const token = getCookie('auth_token');
